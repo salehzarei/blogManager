@@ -1,4 +1,5 @@
 const fs = require('fs')
+const jwt = require('jsonwebtoken')
 const fileCategoryModel = require('../models/fileCategoryModel')
 const filesManageModel = require('../models/filesManageModel')
 
@@ -151,6 +152,14 @@ async function deleteFile(fileID, callback)
     }
 }
 
+function makeToken()
+{
+    return jwt.sign({ foo: 'bar' }, 'shhhhh');
+
+}
 
 
-module.exports = { deleteFile, checkCategory, addNewCategory, addNewFile, getAllCategory, getFileList, deleteCategory, checkFile }
+
+
+
+module.exports = { deleteFile, checkCategory, addNewCategory, addNewFile, getAllCategory, getFileList, deleteCategory, checkFile, makeToken }

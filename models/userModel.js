@@ -1,8 +1,8 @@
-import { UserRoles } from './userRoleModel'
+//import { UserRoles } from './userRoleModel'
 
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var userModel = new Schema({
+var userModelSchema = new Schema({
 
     UserToken: {
         type: String,
@@ -18,11 +18,7 @@ var userModel = new Schema({
     },
     Email: {
         type: String,
-        required: true
-    },
-    UserRoles: {
-        type: Schema.Types.ObjectId,
-        required: true
+
     },
     Status: {
         type: Boolean,
@@ -30,7 +26,6 @@ var userModel = new Schema({
     },
     UserRoles: {
         type: Schema.Types.ObjectId,
-        required: true,
         ref: 'UserRoles'
     }
 });

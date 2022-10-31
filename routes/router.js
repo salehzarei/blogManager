@@ -8,6 +8,8 @@ const servicePageController = require('../controller/servicePageController')
 const fileManagerController = require('../controller/fileManagerController')
 const userManagerController = require('../controller/userManagerController')
 
+const userModel = require("../models/userModel")
+
 
 /// Site Settings
 route.post('/siteSetting', siteSettingController.addNewSiteSetting)
@@ -33,6 +35,9 @@ route.delete('/deleteFile', fileManagerController.deleteFile)
 route.post('/addNewOrUpdateRoll', userManagerController.addNewOrUpdateUserRoll)
 route.post('/getUserRoll', userManagerController.getUserRoll)
 route.delete('/removeUserRoll', userManagerController.removeUserRoll)
+///
+route.post('/addNewUser', userManagerController.addNewUser)
+
 
 
 
